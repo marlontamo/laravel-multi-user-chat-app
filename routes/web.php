@@ -7,6 +7,7 @@ use App\Http\Livewire\Contacts;
 use App\Http\Livewire\Posts;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Post\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/',Contacts::class)->name('contacts');
     Route::get('/chat-with/{uuid}',ChatWith::class)->name('chat_with');
 });
+
+Route::apiResource('/postings',PostController::class);
 
 
 
